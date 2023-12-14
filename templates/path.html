@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Path</title>
+</head>
+<body>
+    <h1>Flight Path</h1>
+    
+    <div id="path">
+        <h2>Airports</h2>
+        {% if path %}
+        <ol>
+            {% for airport in path %}
+            <li>
+                <h3>{{ airport.name }}</h3>
+                <p>City: {{ airport.city }}</p>
+                <p>Country: {{ airport.country }}</p>
+                <p>IATA: {{ airport.iata }}</p>
+                <p>ICAO: {{ airport.icao}}</p>
+            </li>
+            {% endfor %}
+        </ol>
+        {% else %}
+        <p>No path found</p>
+        {% endif %}
+        {% if path_details %}
+        <h2>The Flights</h2>
+        <ol>
+            {% for x in path_details[1:] %}
+            <li>
+                <p>ID: {{x.id}}</p>
+                <p>Destination: {{x.Destination}}</p>
+                <p>Airline: {{x.Airline}}</p>
+                <p>Equipment: {{x.Equipment}}</p>
+            </li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+
+    </div>
+    
+    <div id="map" style="height: 500px; width: 100%;">
+        <h2>Map</h2>
+        {{ map_html | safe }}
+    </div>
+</body>
+</html>

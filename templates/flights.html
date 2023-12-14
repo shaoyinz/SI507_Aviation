@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Flight Results</title>
+    </head>
+    <body>
+        <h1>Flights</h1>
+        {% if flights|length == 0 %}
+            <p>No flights found, please check if you spell the name right.</p>
+        {% endif %}
+        <ul>
+        {% for flight in flights %}
+            <li>Route: {{ flight.source.name }}({{ flight.source.iata}})---{{ flight.destination.name }}({{ flight.destination.iata }}), 
+                Airline: {{ flight.details.Airline }},
+                Equipment: {{flight.details.Equipment}}</li>
+        {% endfor %}
+        </ul>
+        <a href="/">Back to search</a>
+        <div id="map">{{ map_html | safe }}</div>
+    </body>
+</html>

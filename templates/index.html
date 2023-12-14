@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Airport and Flight Information</title>
+    </head>
+    <body>
+        <h1>Welcome to the Airport and Flight Information Center</h1>
+        <h2>Search for an Airport</h2>
+        <form action="/search_airport" method="post">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <input type="submit" value="Search">
+        </form>
+
+        <h2>Search for Airports by location range</h2>
+        <form action="/search_airport_by_location" method="post">
+            <label for="latitude">Min Latitude:</label>
+            <input type="text" id="min_lat" name="min_lat" required>
+            <label for="latitude">Max Latitude:</label>
+            <input type="text" id="max_lat" name="max_lat" required>
+            <label for="longitude">Min Longitude:</label>
+            <input type="text" id="min_lon" name="min_lon" required>
+            <label for="longitude">Max Longitude:</label>
+            <input type="text" id="max_lon" name="max_lon" required>
+            <input type="submit" value="Search">
+        </form>
+
+
+        <h2>Search for Flights for a certain airline</h2>
+        <form action="/search_flights" method="post">
+            <label for="airline">Airline(Enter the Two-letter code):</label>
+            <input type="text" id="airline" name="airline" required>
+            <input type="submit" value="Search">
+        </form>
+
+        <h2> Search for the Least Transition needed for two airport</h2>
+        <form action="/calculate_path" method="post">
+            <label for="source">Source Airport(Enter the Airport ID, if you are not sure, check it through search airport function):</label>
+            <input type="text" id="source" name="source" required>
+            <label for="destination">Destination Airport:</label>
+            <input type="text" id="destination" name="destination" required>
+            <input type="submit" value="Search">
+        </form>
+      
+    </body>
+</html>

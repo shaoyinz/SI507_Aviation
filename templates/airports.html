@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Airport Results</title>
+    </head>
+    <body>
+        <h1>Airports</h1>
+        {% if airports|length == 0 %}
+            <p>No airports found, please check if you spell the name right.</p>
+        {% endif %}
+        <ul>
+        {% for airport in airports.values() %}
+            <li>ID: {{ airport["airport_id"]}} {{ airport["name"] }} ({{ airport["iata"] }}, {{ airport["icao"] }}), Rank: {{ airport["rank"] }}</li>
+        {% endfor %}
+        </ul>
+        <a href="/">Back to search</a>
+    </body>
+</html>
